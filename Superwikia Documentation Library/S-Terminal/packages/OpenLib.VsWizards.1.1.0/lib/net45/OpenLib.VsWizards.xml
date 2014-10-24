@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenLib.VsWizards</name>
+    </assembly>
+    <members>
+        <member name="T:OpenLib.VsWizards.AbstractWizard">
+            <summary>
+            The <c>AbstractWizard</c> type provides an abstract base class
+            implementation containing common, reusable methods for implementing
+            Visual Studio custom project template Wizard classes.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.VarSolutionDir">
+            <summary>
+            Defines the template variable name for the solution directory.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.VarWizardData">
+            <summary>
+            Defines the template variable name for the wizard data.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.VarDestinationDir">
+            <summary>
+            Defines the template variable name for the destination directory.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.VarSafeProjectName">
+            <summary>
+            Defines the template variable name for the safe project name.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.TemplatePackageExt">
+            <summary>
+            Defines the file extension for a Visual Studio template package.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.AbstractWizard.Ns">
+            <summary>
+            Defines the namespace used for wizard template data XML.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.AbstractWizard.#ctor">
+            <summary>
+            Creates a new instance of the <c>AbstractWizard</c> class.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.AbstractWizard.Validate">
+            <summary>
+            Defines an abstract method for validating creation of a Visual
+            Studio project using a project template from a Wizard class
+            implementation.
+            </summary>
+            <returns>A value indicating if the project template is valid.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.AbstractWizard.RunStarted(System.Object,System.Collections.Generic.Dictionary{System.String,System.String},Microsoft.VisualStudio.TemplateWizard.WizardRunKind,System.Object[])">
+            <summary>
+            Defines an abstract base method that sets common properties when a
+            Wizard implementation's RunStarted method is executed.
+            </summary>
+            <param name="automationObject">A reference to the automation object used by the Visual Studio project template wizard.</param>
+            <param name="replacementsDictionary">A reference to a dictionary of template variables that can be modified to provide customization.</param>
+            <param name="runKind">Defines the type of the template the template wizard is creating.</param>
+            <param name="customParams">An array of custom parameters passed to the template wizard.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.AbstractWizard.GetWizardData(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Gets a dictionary containing data for the template wizard using
+            data parsed from the specified replacements dictionary.
+            </summary>
+            <param name="replacementsDictionary">A reference to a dictionary of template variables that can be modified to provide customization.</param>
+            <returns>A dictionary containing data for the template wizard.</returns>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.VsUtils">
+            <summary>
+            Gets a reference to the Visual Studio utilities.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.SolutionRoot">
+            <summary>
+            Gets directory information for the Visual Studio solution root.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.WizardData">
+            <summary>
+            Gets a dictionary containing data for the template wizard.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.TemplatePath">
+            <summary>
+            Gets or sets the path to the Visual Studio project template.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.DefaultDestinationPath">
+            <summary>
+            Gets the default destination path of the Visual Studio project to
+            be created.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.NameSpace">
+            <summary>
+            Gets the namespace for the Visual Studio project to be created.
+            </summary>
+        </member>
+        <member name="P:OpenLib.VsWizards.AbstractWizard.IsValid">
+            <summary>
+            Gets a value indicating if the project template is valid.
+            </summary>
+        </member>
+        <member name="T:OpenLib.VsWizards.FolderWizard">
+            <summary>
+            The <c>FolderWizard</c> type provides an implementation of the
+            <c>IWizard</c> interface that provides a custom Visual Studio project
+            template wizard for overriding the default behavior of where physical
+            project folders are created.
+            </summary>
+            <remarks>
+            This class inherits from AbstractWizard, which provides common
+            Wizard properties and methods.
+            </remarks>
+        </member>
+        <member name="F:OpenLib.VsWizards.FolderWizard.WizardDataKeyTemplate">
+            <summary>
+            Defines the wizard data dictionary key for the project template.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.FolderWizard.WizardDataKeySolutionFolder">
+            <summary>
+            Defines the wizard data dictionary key for the solution folder.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.#ctor">
+            <summary>
+            Creates a new instance of the <c>FolderWizard</c> class.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.Validate">
+            <summary>
+            Validates the creation of a Visual Studio project using a project
+            template from this Wizard class implementation.
+            </summary>
+            <returns>A value indicating if the project template is valid.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.BeforeOpeningFile(EnvDTE.ProjectItem)">
+            <summary>
+            Executes before each file that is being added to a Visual Studio
+            project is opened.
+            </summary>
+            <param name="projectItem">A reference to the project item being added to the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.ProjectFinishedGenerating(EnvDTE.Project)">
+            <summary>
+            Executes when a Visual Studio project is being created.
+            </summary>
+            <param name="project">A reference to the Visual Studio project being created.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.ProjectItemFinishedGenerating(EnvDTE.ProjectItem)">
+            <summary>
+            Executes when a Visual Studio project item is created.
+            </summary>
+            <param name="projectItem">A reference to the project item created in the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.RunFinished">
+            <summary>
+            Executes when the creation of a Visual Studio project is complete.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.ShouldAddProjectItem(System.String)">
+            <summary>
+            Gets a value indicating if a project item should be added to a
+            Visual Studio project.
+            </summary>
+            <param name="filePath">The absolute path to the project item being added.</param>
+            <returns>A value indicating if a project item should be added.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.RunStarted(System.Object,System.Collections.Generic.Dictionary{System.String,System.String},Microsoft.VisualStudio.TemplateWizard.WizardRunKind,System.Object[])">
+            <summary>
+            Executes when the creation of a Visual Studio project is started.
+            </summary>
+            <param name="automationObject">A reference to the automation object used by the Visual Studio project template wizard.</param>
+            <param name="replacementsDictionary">A reference to a dictionary of template variables that can be modified to provide customization.</param>
+            <param name="runKind">Defines the type of the template the template wizard is creating.</param>
+            <param name="customParams">An array of custom parameters passed to the template wizard.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.AddProject(System.IO.DirectoryInfo,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.String)">
+            <summary>
+            Adds a Visual Studio project to a solution folder using the
+            specified wizard data and to an overriden physical folder on the
+            file system.
+            </summary>
+            <param name="solutionRoot">Directory information for the Visual Studio solution root.</param>
+            <param name="wizardData">A dictionary containing data for the template wizard.</param>
+            <param name="templatePath">The path to the Visual Studio project template.</param>
+            <param name="defaultDestinationPath">The default destination path of the Visual Studio project to be created.</param>
+            <param name="nameSpace">The namespace for the Visual Studio project to be created.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.FolderWizard.StripSolutionPath(System.String,System.String)">
+            <summary>
+            Strips an extra directory out of the specified solution path to
+            override the default Visual Studio project folder's location on the
+            file system.
+            </summary>
+            <param name="currentPath">The current path to the Visual Studio solution.</param>
+            <param name="solutionDir">The name of the Visual Studio solution directory.</param>
+            <returns>The updated solution path with the extra directory stripped out.</returns>
+        </member>
+        <member name="T:OpenLib.VsWizards.SolutionCleanUpWizard">
+            <summary>
+            The <c>SolutionCleanUpWizard</c> type provides an implementation of the
+            <c>IWizard</c> interface that provides a custom Visual Studio project
+            template wizard for cleaning up Visual Studio solution and project
+            directories after a solution is created.
+            </summary>
+            <remarks>
+            This class inherits from AbstractWizard, which provides common
+            Wizard properties and methods.
+            </remarks>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.#ctor">
+            <summary>
+            Creates a new instance of the <c>SolutionCleanUpWizard</c> class.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.Validate">
+            <summary>
+            Validates the creation of a Visual Studio project using a project
+            template from this Wizard class implementation.
+            </summary>
+            <returns>A value indicating if the project template is valid.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.BeforeOpeningFile(EnvDTE.ProjectItem)">
+            <summary>
+            Executes before each file that is being added to a Visual Studio
+            project is opened.
+            </summary>
+            <param name="projectItem">A reference to the project item being added to the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.ProjectFinishedGenerating(EnvDTE.Project)">
+            <summary>
+            Executes when a Visual Studio project is being created.
+            </summary>
+            <param name="project">A reference to the Visual Studio project being created.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.ProjectItemFinishedGenerating(EnvDTE.ProjectItem)">
+            <summary>
+            Executes when a Visual Studio project item is created.
+            </summary>
+            <param name="projectItem">A reference to the project item created in the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.RunFinished">
+            <summary>
+            Executes when the creation of a Visual Studio project is complete.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.ShouldAddProjectItem(System.String)">
+            <summary>
+            Gets a value indicating if a project item should be added to a
+            Visual Studio project.
+            </summary>
+            <param name="filePath">The absolute path to the project item being added.</param>
+            <returns>A value indicating if a project item should be added.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.RunStarted(System.Object,System.Collections.Generic.Dictionary{System.String,System.String},Microsoft.VisualStudio.TemplateWizard.WizardRunKind,System.Object[])">
+            <summary>
+            Executes when the creation of a Visual Studio project is started.
+            </summary>
+            <param name="automationObject">A reference to the automation object used by the Visual Studio project template wizard.</param>
+            <param name="replacementsDictionary">A reference to a dictionary of template variables that can be modified to provide customization.</param>
+            <param name="runKind">Defines the type of the template the template wizard is creating.</param>
+            <param name="customParams">An array of custom parameters passed to the template wizard.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionCleanUpWizard.CleanSolution(System.IO.DirectoryInfo)">
+            <summary>
+            Cleans up Visual Studio solution and project directories.
+            </summary>
+            <param name="solutionRoot">Directory information for the Visual Studio solution root.</param>
+        </member>
+        <member name="T:OpenLib.VsWizards.SolutionItemsWizard">
+            <summary>
+            The <c>SolutionItemsWizard</c> type provides an implementation of the
+            <c>IWizard</c> interface that provides a custom Visual Studio project
+            template wizard for adding solution items to a Visual Studio solution.
+            </summary>
+            <remarks>
+            This class inherits from AbstractWizard, which provides common
+            Wizard properties and methods.
+            </remarks>
+        </member>
+        <member name="F:OpenLib.VsWizards.SolutionItemsWizard.WizardDataKeySolutionItems">
+            <summary>
+            Defines the wizard data dictionary key for the solution items.
+            </summary>
+        </member>
+        <member name="F:OpenLib.VsWizards.SolutionItemsWizard.PhysicalSolutionRoot">
+            <summary>
+            Defines the physical Visual Studio solution root.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.#ctor">
+            <summary>
+            Creates a new instance of the <c>SolutionItemsWizard</c> class.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.Validate">
+            <summary>
+            Validates the creation of a Visual Studio project using a project
+            template from this Wizard class implementation.
+            </summary>
+            <returns>A value indicating if the project template is valid.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.BeforeOpeningFile(EnvDTE.ProjectItem)">
+            <summary>
+            Executes before each file that is being added to a Visual Studio
+            project is opened.
+            </summary>
+            <param name="projectItem">A reference to the project item being added to the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.ProjectFinishedGenerating(EnvDTE.Project)">
+            <summary>
+            Executes when a Visual Studio project is being created.
+            </summary>
+            <param name="project">A reference to the Visual Studio project being created.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.ProjectItemFinishedGenerating(EnvDTE.ProjectItem)">
+            <summary>
+            Executes when a Visual Studio project item is created.
+            </summary>
+            <param name="projectItem">A reference to the project item created in the Visual Studio project.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.RunFinished">
+            <summary>
+            Executes when the creation of a Visual Studio project is complete.
+            </summary>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.ShouldAddProjectItem(System.String)">
+            <summary>
+            Gets a value indicating if a project item should be added to a
+            Visual Studio project.
+            </summary>
+            <param name="filePath">The absolute path to the project item being added.</param>
+            <returns>A value indicating if a project item should be added.</returns>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.RunStarted(System.Object,System.Collections.Generic.Dictionary{System.String,System.String},Microsoft.VisualStudio.TemplateWizard.WizardRunKind,System.Object[])">
+            <summary>
+            Executes when the creation of a Visual Studio project is started.
+            </summary>
+            <param name="automationObject">A reference to the automation object used by the Visual Studio project template wizard.</param>
+            <param name="replacementsDictionary">A reference to a dictionary of template variables that can be modified to provide customization.</param>
+            <param name="runKind">Defines the type of the template the template wizard is creating.</param>
+            <param name="customParams">An array of custom parameters passed to the template wizard.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.GetSolutionItems(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Gets a list of all solution items to be added to a Visual Studio
+            solution.
+            </summary>
+            <param name="wizardData">A dictionary containing data for the template wizard.</param>
+            <returns>A list of all solution items to be added to a Visual Studio solution.</returns>
+            <remarks>
+            Each list item is stored as a Tuple:
+            Item1 = Physical folder
+            Item2 = Solution folder
+            Item3 = Solution item file
+            </remarks>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.AddSolutionItems(System.IO.DirectoryInfo,System.String,System.Collections.Generic.List{System.Tuple{System.String,System.String,System.String}})">
+            <summary>
+            Adds Visual Studio solution items to solution folders using the
+            specified solution item metadata and creates the files in their
+            appropriate physical folders on the file system.
+            </summary>
+            <param name="solutionRoot">Directory information for the Visual Studio solution root.</param>
+            <param name="templatePath">The path to the Visual Studio project template.</param>
+            <param name="solutionItems">A list of metadata for creation of the solution items.</param>
+        </member>
+        <member name="M:OpenLib.VsWizards.SolutionItemsWizard.GetSafePath(System.String)">
+            <summary>
+            Gets a safe path by removing invalid path characters.
+            </summary>
+            <param name="path">The path in which to cleanse of invalid characters.</param>
+            <returns>A safe path by removing invalid path characters.</returns>
+        </member>
+    </members>
+</doc>

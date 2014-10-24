@@ -1,0 +1,6 @@
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\bin\Debug\Local Ruleset Shells.dll
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\bin\Debug\Local Ruleset Shells.pdb
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\obj\Debug\Local Ruleset Shells.dll
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\obj\Debug\Local Ruleset Shells.pdb
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\bin\Debug\Local Ruleset Shells.dll.CodeAnalysisLog.xml
+C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Local Ruleset Shells\bin\Debug\Local Ruleset Shells.dll.lastcodeanalysissucceeded

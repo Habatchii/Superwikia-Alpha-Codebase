@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Exts.Console
+</name>
+</assembly>
+<members>
+<member name="P:Exts.Console.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Exts.Console.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Exts.Console.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Exts.Console.Exts.WaitForKey(System.Int32,System.Boolean)">
+	<summary>
+ Wait for a key to be pressed.
+ </summary>
+	<param name="WaitUpToMS">How long to wait for in milliseconds?</param>
+	<param name="shown">Is the character shown in the console?</param>
+	<returns>The ConsoleKeyInfo the pressed key, or in a timeout Nothing.</returns>
+	<remarks></remarks>
+</member><member name="M:Exts.Console.Exts.WaitForYesNo(System.Int32,System.Boolean)">
+	<summary>
+ Wait for a Yes or No.
+ </summary>
+	<param name="WaitUptoMs">How long to wait for in milliseconds?</param>
+	<param name="shown">Is the character shown in the console?</param>
+	<returns>The ConsoleKeyInfo the pressed key, or in a timeout Nothing.</returns>
+	<remarks>Y or y is Yes, N or n is No.
+ </remarks>
+</member>
+</members>
+</doc>

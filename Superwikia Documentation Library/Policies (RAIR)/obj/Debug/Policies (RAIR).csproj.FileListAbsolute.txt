@@ -1,0 +1,7 @@
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Debug\Policies (RAIR).dll
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Debug\Policies (RAIR).pdb
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Debug\Policies (RAIR).csprojResolveAssemblyReference.cache
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Debug\Policies (RAIR).dll
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Debug\Policies (RAIR).pdb
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Debug\Policies (RAIR).dll.CodeAnalysisLog.xml
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Debug\Policies (RAIR).dll.lastcodeanalysissucceeded

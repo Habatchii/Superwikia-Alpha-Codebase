@@ -1,0 +1,1255 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenLib.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:OpenLib.Utils.CodeGenUtils">
+            <summary>
+            The <c>CodeGenUtils</c> type provides an implementation of the
+            <c>ICodeGenUtils</c> interface that provides utility methods for
+            code generation.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.ICodeGenUtils">
+            <summary>
+            The <c>ICodeGenUtils</c> type provides an interface containing
+            utility methods for code generation.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateCodeFileName(OpenLib.Utils.CodeLanguage,System.String)">
+            <summary>
+            Creates a code file name using the specified code type and class name.
+            </summary>
+            <param name="codeLang">The code language enumeration defining the language of the code.</param>
+            <param name="className">The name of the code class.</param>
+            <returns>A code file name with the appropriate code type extension.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateCodeFile(System.CodeDom.CodeNamespace,OpenLib.Utils.CodeLanguage,System.String)">
+            <summary>
+            Creates a code file using objects stored in the specified code namepace
+            for the specified code type.
+            </summary>
+            <param name="codeNamespace">The <see cref="T:System.CodeDom.CodeNamespace"/> containing the objects to generate code for.</param>
+            <param name="codeLang">The code language enumeration defining the language of the code to generate.</param>
+            <param name="path">The path to the code file.</param>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMember(System.String,System.String,System.Boolean,System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a member variable for a code class.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberType">The type of the member.</param>
+            <param name="initMember">A value indicating if the member should be initialized.</param>
+            <param name="attributes">The attributes of the member.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMemberField"/> containing the member variable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateConstructor(System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a constructor for a code class.
+            </summary>
+            <param name="attributes">The attributes of the constructor.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeConstructor"/> containing the constructor.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMemberInitialization(System.String,System.String)">
+            <summary>
+            Creates a member initialization statement.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberType">The type of the member.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member initialization statement.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMemberMethodAssignment(System.String,System.String)">
+            <summary>
+            Creates a member assignment to a class method.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member assignement to a class method.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMemberMethodInvocation(System.String,System.String,System.String)">
+            <summary>
+            Creates a member variable method invocation.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberMethodName">The name of the member's method to invoke.</param>
+            <param name="memberMethodParam">The parameter to pass to the member's method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodInvokeExpression"/> containing the member's method invocation.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMemberPropertyAssignment(System.String,System.String,System.String)">
+            <summary>
+            Creates a member variable property assignment statement.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberPropertyName">The name of the member's property.</param>
+            <param name="memberPropertyValue">The value to assign to the member's property.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member property assignment statement.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMethod(System.String,System.String,System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a method for a code class.
+            </summary>
+            <param name="methodName">The name of the method.</param>
+            <param name="methodReturnType">The return type of the method.</param>
+            <param name="attributes">The attributes of the method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMemberMethod"/> containing the method.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMethodParameter(System.String,System.String)">
+            <summary>
+            Creates a parameter for a method.
+            </summary>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="parameterType">The type of the parameter.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeParameterDeclarationExpression"/> containing the method parameter.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMethodReturn(System.String)">
+            <summary>
+            Creates a method return statement.
+            </summary>
+            <param name="returnVariableName">The name of the method return variable.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodReturnStatement"/> containing the method return variable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ICodeGenUtils.CreateMethodReturnThisReference">
+            <summary>
+            Creates a method return statement that returns the this reference.
+            </summary>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodReturnStatement"/> containing the method return this reference.</returns>
+        </member>
+        <member name="F:OpenLib.Utils.CodeGenUtils.BracingStyle">
+            <summary>
+            Defines the bracing style for code generation.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.CodeGenUtils.CodeInfoUtils">
+            <summary>
+            Defines a reference to the <c>CodeInfoUtils</c> for obtaining code
+            information.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.#ctor(OpenLib.Utils.IIoUtils)">
+            <summary>
+            Creates a new instance of the <c>CodeGenUtils</c> class.
+            </summary>
+            <param name="ioUtils">A reference to the <c>IIoUtils</c> for performing I/O operations.</param>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateCodeFileName(OpenLib.Utils.CodeLanguage,System.String)">
+            <summary>
+            Creates a code file name using the specified code type and class name.
+            </summary>
+            <param name="codeLang">The code language enumeration defining the language of the code.</param>
+            <param name="className">The name of the code class.</param>
+            <returns>A code file name with the appropriate code type extension.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateCodeFile(System.CodeDom.CodeNamespace,OpenLib.Utils.CodeLanguage,System.String)">
+            <summary>
+            Creates a code file using objects stored in the specified code namepace
+            for the specified code type.
+            </summary>
+            <param name="codeNamespace">The <see cref="T:System.CodeDom.CodeNamespace"/> containing the objects to generate code for.</param>
+            <param name="codeLang">The code language enumeration defining the language of the code to generate.</param>
+            <param name="path">The path to the code file.</param>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateTextWriter(System.String)">
+            <summary>
+            Creates a text writer used to create a code file for code output.
+            </summary>
+            <param name="path">The path to the code file.</param>
+            <returns>A <see cref="T:System.IO.TextWriter"/> used to write the code file.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMember(System.String,System.String,System.Boolean,System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a member variable for a code class.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberType">The type of the member.</param>
+            <param name="initMember">A value indicating if the member should be initialized.</param>
+            <param name="attributes">The attributes of the member.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMemberField"/> containing the member variable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateConstructor(System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a constructor for a code class.
+            </summary>
+            <param name="attributes">The attributes of the constructor.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeConstructor"/> containing the constructor.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMemberInitialization(System.String,System.String)">
+            <summary>
+            Creates a member initialization statement.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberType">The type of the member.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member initialization statement.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMemberMethodAssignment(System.String,System.String)">
+            <summary>
+            Creates a member assignment to a class method.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member assignement to a class method.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMemberMethodInvocation(System.String,System.String,System.String)">
+            <summary>
+            Creates a member variable method invocation.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberMethodName">The name of the member's method to invoke.</param>
+            <param name="memberMethodParam">The parameter to pass to the member's method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodInvokeExpression"/> containing the member's method invocation.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMemberPropertyAssignment(System.String,System.String,System.String)">
+            <summary>
+            Creates a member variable property assignment statement.
+            </summary>
+            <param name="memberName">The name of the member.</param>
+            <param name="memberPropertyName">The name of the member's property.</param>
+            <param name="memberPropertyValue">The value to assign to the member's property.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeAssignStatement"/> containing the member property assignment statement.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMethod(System.String,System.String,System.CodeDom.MemberAttributes)">
+            <summary>
+            Creates a method for a code class.
+            </summary>
+            <param name="methodName">The name of the method.</param>
+            <param name="methodReturnType">The return type of the method.</param>
+            <param name="attributes">The attributes of the method.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMemberMethod"/> containing the method.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMethodParameter(System.String,System.String)">
+            <summary>
+            Creates a parameter for a method.
+            </summary>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="parameterType">The type of the parameter.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeParameterDeclarationExpression"/> containing the method parameter.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMethodReturn(System.String)">
+            <summary>
+            Creates a method return statement.
+            </summary>
+            <param name="returnVariableName">The name of the method return variable.</param>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodReturnStatement"/> containing the method return variable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeGenUtils.CreateMethodReturnThisReference">
+            <summary>
+            Creates a method return statement that returns the this reference.
+            </summary>
+            <returns>A <see cref="T:System.CodeDom.CodeMethodReturnStatement"/> containing the method return this reference.</returns>
+        </member>
+        <member name="P:OpenLib.Utils.CodeGenUtils.IoUtils">
+            <summary>
+            Gets or sets a reference to the <c>IIoUtils</c> for performing I/O
+            operations.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.CodeInfoUtils">
+            <summary>
+            The <c>CodeInfoUtils</c> type provides utility methods for obtaining
+            code information.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.CodeInfoUtils.CodeInfo">
+            <summary>
+            Defines a list of code information based on the code language.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.CodeInfoUtils.GetCodeLanguage(OpenLib.Utils.CodeLanguage)">
+            <summary>
+            Gets the code language from the code information using the
+            specified code language.
+            </summary>
+            <param name="codeLang">The code language enumeration defining the language of the code.</param>
+            <returns>The code language from the code information.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.CodeInfoUtils.GetCodeFileExtension(OpenLib.Utils.CodeLanguage)">
+            <summary>
+            Gets the code file extension from the code information using the
+            specified code language.
+            </summary>
+            <param name="codeLang">The code language enumeration defining the language of the code.</param>
+            <returns>The code file extension from the code information.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.CodeLanguage">
+            <summary>
+            The <c>CodeLanguage</c> type provides an enumeration for code
+            languages.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.CodeLanguage.CSharp">
+            <summary>
+            Indicates the code language is C#.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.CodeLanguage.VisualBasic">
+            <summary>
+            Indicates the code language is Visual Basic.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.IIoUtils">
+            <summary>
+            The <c>IIoUtils</c> type provides an interface containing utility
+            methods for common I/O operations.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.IsDirectory(System.String)">
+            <summary>
+            Gets a value indicating if the specified path is a directory.
+            </summary>
+            <param name="path">The path to validate as a directory.</param>
+            <returns>A value indicating if the specified path is a directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.DirectoryExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified directory exists.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>A value indicating if the specified directory exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.CopyDirectory(System.String,System.String)">
+            <summary>
+            Copies the specified source directory to the target path.
+            </summary>
+            <param name="sourcePath">The path to the source directory.</param>
+            <param name="targetPath">The path to the target directory.</param>
+            <returns>A value indicating the directory copied successfully.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.CreateDirectory(System.String)">
+            <summary>
+            Creates the specified directory if it does not exist.
+            </summary>
+            <param name="path">The path to the directory to create.</param>
+            <returns>A value indicating if the directory was created.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.DeleteDirectoryContents(System.String)">
+            <summary>
+            Deletes all files and subdirectories in the specified directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>A value indicating if all files and subdirectories in the specified directory were deleted.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.DeleteDirectory(System.String)">
+            <summary>
+            Deletes the specified directory if it exists.
+            </summary>
+            <remarks>
+            Recursively deletes all sub directories and files in the specified
+            directory.
+            </remarks>
+            <param name="path">The path to the directory to delete.</param>
+            <returns>A value indicating if the directory was deleted.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.FileExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified file exists.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>A value indicating if the specified file exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.GetCountOfFilesInDirectory(System.String)">
+            <summary>
+            Gets a count indicating the number of files in the specified
+            directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>The number of the files in the directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.CopyFile(System.String,System.String)">
+            <summary>
+            Copies the specified source file to the target file path.
+            </summary>
+            <param name="sourcePath">The path to the source file.</param>
+            <param name="targetPath">The path to the target file.</param>
+            <returns>A value indicating the file copied successfully.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.ReadFile(System.String)">
+            <summary>
+            Reads and returns the contents of the specified file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>The contents of the file.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.ReadFileAsStream(System.String)">
+            <summary>
+            Reads and returns the contents of the specified file as a file
+            stream.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>The contents of the file as a file stream.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.IsFileReadOnly(System.String)">
+            <summary>
+            Gets a value indicating if the specified file is read only.
+            </summary>
+            <param name="path">The path to the file to determine if it is read only.</param>
+            <returns>A value indicating if the specified file is read only.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.WriteFile(System.String,System.String)">
+            <summary>
+            Writes the specified contents to the specified file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="contents">The contents of the file.</param>
+            <returns>A value indicating if the file was written.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.CreateFileTextWriter(System.String)">
+            <summary>
+            Creates a file text writer used to create file output.
+            </summary>
+            <remarks>
+            This implementation returns a <see cref="T:System.IO.StreamWriter"/>.
+            </remarks>
+            <param name="path">The path to the file.</param>
+            <returns>A <see cref="T:System.IO.TextWriter"/> used to write the file.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.DeleteFiles(System.String)">
+            <summary>
+            Deletes all files in the specified directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>The count of files deleted from the directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IIoUtils.DeleteFile(System.String)">
+            <summary>
+            Deletes the specified file from the file system.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>A value indicating if the file was deleted.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.IoUtils">
+            <summary>
+            The <c>IoUtils</c> type provides an implementation of the
+            <c>IIoUtils</c> interface that provides utility methods for common
+            I/O operations.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.IsDirectory(System.String)">
+            <summary>
+            Gets a value indicating if the specified path is a directory.
+            </summary>
+            <param name="path">The path to validate as a directory.</param>
+            <returns>A value indicating if the specified path is a directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.DirectoryExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified directory exists.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>A value indicating if the specified directory exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.CopyDirectory(System.String,System.String)">
+            <summary>
+            Copies the specified source directory to the target path.
+            </summary>
+            <param name="sourcePath">The path to the source directory.</param>
+            <param name="targetPath">The path to the target directory.</param>
+            <returns>A value indicating the directory copied successfully.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.CreateDirectory(System.String)">
+            <summary>
+            Creates the specified directory if it does not exist.
+            </summary>
+            <param name="path">The path to the directory to create.</param>
+            <returns>A value indicating if the directory was created.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.DeleteDirectoryContents(System.String)">
+            <summary>
+            Deletes all files and subdirectories in the specified directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>A value indicating if all files and subdirectories in the specified directory were deleted.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.DeleteDirectory(System.String)">
+            <summary>
+            Deletes the specified directory if it exists.
+            </summary>
+            <remarks>
+            Recursively deletes all sub directories and files in the specified
+            directory.
+            </remarks>
+            <param name="path">The path to the directory to delete.</param>
+            <returns>A value indicating if the directory was deleted.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.FileExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified file exists.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>A value indicating if the specified file exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.GetCountOfFilesInDirectory(System.String)">
+            <summary>
+            Gets a count indicating the number of files in the specified
+            directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>The number of the files in the directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.CopyFile(System.String,System.String)">
+            <summary>
+            Copies the specified source file to the target file path.
+            </summary>
+            <param name="sourcePath">The path to the source file.</param>
+            <param name="targetPath">The path to the target file.</param>
+            <returns>A value indicating the file copied successfully.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.ReadFile(System.String)">
+            <summary>
+            Reads and returns the contents of the specified file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>The contents of the file.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.ReadFileAsStream(System.String)">
+            <summary>
+            Reads and returns the contents of the specified file as a file
+            stream.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>The contents of the file as a file stream.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.IsFileReadOnly(System.String)">
+            <summary>
+            Gets a value indicating if the specified file is read only.
+            </summary>
+            <param name="path">The path to the file to determine if it is read only.</param>
+            <returns>A value indicating if the specified file is read only.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.WriteFile(System.String,System.String)">
+            <summary>
+            Writes the specified contents to the specified file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="contents">The contents of the file.</param>
+            <returns>A value indicating if the file was written.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.CreateFileTextWriter(System.String)">
+            <summary>
+            Creates a file text writer used to create file output.
+            </summary>
+            <remarks>
+            This implementation returns a <see cref="T:System.IO.StreamWriter"/>.
+            </remarks>
+            <param name="path">The path to the file.</param>
+            <returns>A <see cref="T:System.IO.TextWriter"/> used to write the file.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.DeleteFiles(System.String)">
+            <summary>
+            Deletes all files in the specified directory.
+            </summary>
+            <param name="path">The path to the directory.</param>
+            <returns>The count of files deleted from the directory.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IoUtils.DeleteFile(System.String)">
+            <summary>
+            Deletes the specified file from the file system.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <returns>A value indicating if the file was deleted.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.IProcessUtils">
+            <summary>
+            The <c>IProcessUtils</c> type provides an interface containing
+            utility methods for managing processes.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IProcessUtils.ExecuteProcess(System.Diagnostics.ProcessStartInfo,System.String@,System.String@)">
+            <summary>
+            Executes the process defined in the <see cref="T:System.Diagnostics.ProcessStartInfo"/>
+            object and outputs the standard output and errors, if any, into the
+            specified output parameters, respectively.
+            </summary>
+            <param name="processInfo">A <see cref="T:System.Diagnostics.ProcessStartInfo"/> object containing information to start the process.</param>
+            <param name="output">An output parameter to contain the standard output of the process.</param>
+            <param name="errors">An output parameter to contain the standard errors, if any, of the process.</param>
+            <returns>A value indicating if the process completed successfully.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.IQueueUtils">
+            <summary>
+            The <c>IQueueUtils</c> type provides an interface containing utility
+            methods for interfacing with message queues.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.QueueExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue exists.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.QueueIsReadable(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue is readable.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue is readable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.QueueIsWritable(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue is writable.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue is writable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.MessageExistsInQueue``1(System.String,``0)">
+            <summary>
+            Gets a value indicating if the specified message exists in the
+            specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="o">The message to locate in the queue.</param>
+            <returns>A value indicating if the message exists in the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.GetMessageCount(System.String)">
+            <summary>
+            Gets a count of messages in the specified queue.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>The count of messages in the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.GetMessageFromQueue``1(System.String)">
+            <summary>
+            Gets a message from the specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A message from the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.GetMessageFromQueueById``1(System.String,System.String)">
+            <summary>
+            Gets a message using the specified identifier from the specified
+            queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="messageId">The identifier of the message.</param>
+            <returns>A message from the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.AddMessageToQueue``1(System.String,``0)">
+            <summary>
+            Adds the specified method to the specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="o">The message to add to the queue.</param>
+            <returns>The identifier of the message added to the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IQueueUtils.PurgeQueueMessages(System.String)">
+            <summary>
+            Purges all messages from the specified queue.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+        </member>
+        <member name="T:OpenLib.Utils.IServiceUtils">
+            <summary>
+            The <c>IServiceUtils</c> type provides an interface containing
+            utility methods for managing Windows services.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IServiceUtils.GetServiceState(System.String,System.String)">
+            <summary>
+            Gets the state of the specified Windows service on the specified
+            host.
+            </summary>
+            <param name="host">The name of the host to connect to where the Windows service resides.</param>
+            <param name="serviceName">The name of the Windows service.</param>
+            <returns>The state of the Windows service.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IServiceUtils.ChangeServiceState(System.String,System.String,OpenLib.Utils.WindowsServiceAction)">
+            <summary>
+            Changes the state of the specified Windows service using the
+            specified action.
+            </summary>
+            <param name="host">The name of the host to connect to where the Windows service resides.</param>
+            <param name="serviceName">The name of the Windows service.</param>
+            <param name="action">The action in which to perform on the Windows service.</param>
+            <returns>A value indicating if the state of the Windows service was changed.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.IVsInfo">
+            <summary>
+            The <c>IVsInfo</c> type provides an interface defining properties
+            for Visual Studio information.
+            </summary>
+        </member>
+        <member name="P:OpenLib.Utils.IVsInfo.Version">
+            <summary>
+            Gets the version number of Visual Studio.
+            </summary>
+        </member>
+        <member name="P:OpenLib.Utils.IVsInfo.Language">
+            <summary>
+            Gets the code language used with Visual Studio.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.IVsUtils">
+            <summary>
+            The <c>IVsUtils</c> type provides an interface containing utility
+            methods for reading Visual Studio solution and project information.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetActiveInstance">
+            <summary>
+            Gets an instance of the currently running Visual Studio IDE process.
+            </summary>
+            <returns>An instance of the currently running Visual Studio IDE process.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetActiveSolution">
+            <summary>
+            Gets the active Visual Studio solution.
+            </summary>
+            <returns>The active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetActiveConfiguration(EnvDTE.Project)">
+            <summary>
+            Gets the active configuration for the specified Visual Studio project.
+            </summary>
+            <param name="project">The Visual Studio project to get the active configuration for.</param>
+            <returns>The active configuration for the specified Visual Studio project.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetSolutionFolders(EnvDTE.Solution)">
+            <summary>
+            Gets a list of all Visual Studio solution folders in the active
+            Visual Studio solution.
+            </summary>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A list of all Visual Studio solution folders in the active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.FindSolutionFolder(System.String,EnvDTE.Solution)">
+            <summary>
+            Finds a Visual Studio solution folder using the specified name.
+            </summary>
+            <param name="name">The name of the Visual Studio solution folder.</param>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A Visual Studio solution folder using the specified name.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.ConvertToSolutionFolder(EnvDTE.Project)">
+            <summary>
+            Converts the specified Visual Studio Project folder into a
+            SolutionFolder reference.
+            </summary>
+            <param name="folder">A Visual Studio Project folder reference.</param>
+            <returns>A converted SolutionFolder reference.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetProjects(EnvDTE.Solution)">
+            <summary>
+            Gets a list of all Visual Studio projects in the active Visual
+            Studio solution.
+            </summary>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A list of all Visual Studio projects in the active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.FindProject(System.String,EnvDTE.Solution)">
+            <summary>
+            Finds a Visual Studio project using the specified name.
+            </summary>
+            <param name="name">The name of the Visual Studio project.</param>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A Visual Studio project using the specified name.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetClassFilesInProject(EnvDTE.Project)">
+            <summary>
+            Gets a list of class files from the specfied Visual Studio project.
+            </summary>
+            <param name="project">A reference to the Visual Studio project.</param>
+            <returns>A list of class files from the specfied Visual Studio project.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetClassFilesFromProjectItems(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of class files from the specfied list of project items.
+            </summary>
+            <param name="items">A list of project items.</param>
+            <returns>A list of class files from the specfied list of project items.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetNamespacesInClassFiles(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of namespaces from the specified list of class files.
+            </summary>
+            <param name="items">A list of class files.</param>
+            <returns>A list of namespaces from the specified list of class files.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IVsUtils.GetClassesInClassFiles(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of code classes from the specified list of class files.
+            </summary>
+            <param name="items">A list of class files.</param>
+            <returns>A list of code classes from the specified list of class files.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.IXmlUtils">
+            <summary>
+            The <c>IXmlUtils</c> type provides an interface containing utility
+            methods for common XML operations.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.IXmlUtils.ValidateDocument(System.String,System.String,System.String)">
+            <summary>
+            Validates if the specified XML document conforms to the specified
+            XSD schema containing the specified namespace.
+            </summary>
+            <param name="xml">The XML document as a string to validate.</param>
+            <param name="xsd">The XSD schema as a string used for validation.</param>
+            <param name="ns">The target namespace.</param>
+            <returns>A value indicating if the validation succeeded.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IXmlUtils.GetElement(System.String,System.String,System.Xml.Linq.XNamespace)">
+            <summary>
+            Gets the value of the specified XML element from the specified XML
+            file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="element">The name of the XML element.</param>
+            <param name="ns">An optional namespace for the XML element.</param>
+            <returns>The value of the specified XML element.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.IXmlUtils.UpdateElement(System.String,System.String,System.String,System.Xml.Linq.XNamespace)">
+            <summary>
+            Updates the specified XML element with a value for the specified
+            XML file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="element">The name of the XML element.</param>
+            <param name="value">The value to update for the XML element.</param>
+            <param name="ns">An optional namespace for the XML element.</param>
+            <returns>A value indicating if the XML element was updated.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.MsmqQueueUtils">
+            <summary>
+            The <c>MsmqQueueUtils</c> type provides an implementation of the
+            <c>IQueueUtils</c> interface that provides utility methods for
+            interfacing with message queues.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.QueueExists(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue exists.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue exists.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.QueueIsReadable(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue is readable.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue is readable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.QueueIsWritable(System.String)">
+            <summary>
+            Gets a value indicating if the specified queue is writable.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A value indicating if the queue is writable.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.MessageExistsInQueue``1(System.String,``0)">
+            <summary>
+            Gets a value indicating if the specified message exists in the
+            specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="o">The message to locate in the queue.</param>
+            <returns>A value indicating if the message exists in the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.GetMessageCount(System.String)">
+            <summary>
+            Gets a count of messages in the specified queue.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>The count of messages in the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.GetMessageFromQueue``1(System.String)">
+            <summary>
+            Gets a message from the specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <returns>A message from the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.GetMessageFromQueueById``1(System.String,System.String)">
+            <summary>
+            Gets a message using the specified identifier from the specified
+            queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="messageId">The identifier of the message.</param>
+            <returns>A message from the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.AddMessageToQueue``1(System.String,``0)">
+            <summary>
+            Adds the specified method to the specified queue.
+            </summary>
+            <typeparam name="T">The type of the message.</typeparam>
+            <param name="path">The absolute path to the queue.</param>
+            <param name="o">The message to add to the queue.</param>
+            <returns>The identifier of the message added to the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.PurgeQueueMessages(System.String)">
+            <summary>
+            Purges all messages from the specified queue.
+            </summary>
+            <param name="path">The absolute path to the queue.</param>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.ConfigureQueue(System.Messaging.MessageQueue)">
+            <summary>
+            Configures the properties of the specified queue.
+            </summary>
+            <param name="queue">A reference to the queue in which to configure.</param>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.PeekWithoutTimeout(System.Messaging.MessageQueue,System.Messaging.Cursor,System.Messaging.PeekAction)">
+            <summary>
+            Peeks into the specified queue and returns a message without
+            popping that message off the queue.
+            </summary>
+            <param name="queue">A reference to the queue in which to peek into.</param>
+            <param name="cursor">The cursor used to peek into the queue.</param>
+            <param name="action">The peek action to perform.</param>
+            <returns>A peeked message from the queue that remains in the queue.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.MsmqQueueUtils.GetMessageCount(System.Messaging.MessageQueue)">
+            <summary>
+            Gets a count of messages in the specified queue.
+            </summary>
+            <param name="queue">A reference to the queue in which get a count of messages.</param>
+            <returns>The count of messages in the queue.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.ProcessUtils">
+            <summary>
+            The <c>ProcessUtils</c> type provides an implementation of the
+            <c>IProcessUtils</c> interface that provides utility methods for
+            managing processes.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.ProcessUtils.ExecuteProcess(System.Diagnostics.ProcessStartInfo,System.String@,System.String@)">
+            <summary>
+            Executes the process defined in the <see cref="T:System.Diagnostics.ProcessStartInfo"/>
+            object and outputs the standard output and errors, if any, into the
+            specified output parameters, respectively.
+            </summary>
+            <param name="processInfo">A <see cref="T:System.Diagnostics.ProcessStartInfo"/> object containing information to start the process.</param>
+            <param name="output">An output parameter to contain the standard output of the process.</param>
+            <param name="errors">An output parameter to contain the standard errors, if any, of the process.</param>
+            <returns>A value indicating if the process completed successfully.</returns>
+        </member>
+        <member name="T:OpenLib.Utils.Vs2012CsInfo">
+            <summary>
+            The <c>Vs2012CsInfo</c> type provides an implementation of the
+            <c>IVsInfo</c> interface that defines properties for Visual Studio
+            information.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.Vs2012CsInfo.VsVersion">
+            <summary>
+            Defines the version of Visual Studio.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.Vs2012CsInfo.VsCodeLanguage">
+            <summary>
+            Defines the code language used.
+            </summary>
+        </member>
+        <member name="P:OpenLib.Utils.Vs2012CsInfo.Version">
+            <summary>
+            Gets the version number of Visual Studio.
+            </summary>
+        </member>
+        <member name="P:OpenLib.Utils.Vs2012CsInfo.Language">
+            <summary>
+            Gets the code language used with Visual Studio.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.ServiceUtils">
+            <summary>
+            The <c>ServiceUtils</c> type provides an implementation of the
+            <c>IServiceUtils</c> interface that provides utility methods for
+            managing Windows services.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.ServiceUtils.#ctor(OpenLib.Utils.IProcessUtils)">
+            <summary>
+            Creates a new instance of the <c>ServiceUtils</c> class.
+            </summary>
+            <param name="processUtils">A reference to the <c>IProcessUtils</c> for managing processes.</param>
+        </member>
+        <member name="M:OpenLib.Utils.ServiceUtils.GetServiceState(System.String,System.String)">
+            <summary>
+            Gets the state of the specified Windows service on the specified
+            host.
+            </summary>
+            <param name="host">The name of the host to connect to where the Windows service resides.</param>
+            <param name="serviceName">The name of the Windows service.</param>
+            <returns>The state of the Windows service.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ServiceUtils.ChangeServiceState(System.String,System.String,OpenLib.Utils.WindowsServiceAction)">
+            <summary>
+            Changes the state of the specified Windows service using the
+            specified action.
+            </summary>
+            <param name="host">The name of the host to connect to where the Windows service resides.</param>
+            <param name="serviceName">The name of the Windows service.</param>
+            <param name="action">The action in which to perform on the Windows service.</param>
+            <returns>A value indicating if the state of the Windows service was changed.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.ServiceUtils.CreateProcessInfo(System.String)">
+            <summary>
+            Creates a <c>ProcessStartInfo</c> object using the specified process
+            arguments.
+            </summary>
+            <param name="processArgs">The arguments to be passed to the process.</param>
+            <returns>A populated <c>ProcessStartInfo</c> ibject with process arguments.</returns>
+        </member>
+        <member name="P:OpenLib.Utils.ServiceUtils.ProcessUtils">
+            <summary>
+            Gets or sets a reference to the <c>IProcessUtils</c> for managing
+            processes.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.VsUtils">
+            <summary>
+            The <c>VsUtils</c> type provides an implementation of the
+            <c>IVsUtils</c> interface that provides common utility methods for
+            reading Visual Studio solution and project information.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.VsUtils.Dte">
+            <summary>
+            Defines the Visual Studio IDE reference string.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.VsUtils.CodeInfoUtils">
+            <summary>
+            Defines a reference to the <c>CodeInfoUtils</c> for obtaining code
+            information.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.CreateBindCtx(System.Int32,System.Runtime.InteropServices.ComTypes.IBindCtx@)">
+            <summary>
+            Creates a binding context for a process.
+            </summary>
+            <param name="reserved">Reserved value for the context.</param>
+            <param name="ppbc">Output parameter containing the binding context.</param>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetRunningObjectTable(System.Int32,System.Runtime.InteropServices.ComTypes.IRunningObjectTable@)">
+            <summary>
+            Gets the running object table of processes.
+            </summary>
+            <param name="reserved">Reserved value for the running object table.</param>
+            <param name="prot">Output parameter containing the running object table.</param>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.#ctor(OpenLib.Utils.IVsInfo)">
+            <summary>
+            Creates a new instance of the <c>VsUtils</c> class.
+            </summary>
+            <param name="vsInfo">A reference to the <c>IVsInfo</c> that contains information on the Visual Studio instance.</param>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetActiveInstance">
+            <summary>
+            Gets an instance of the currently running Visual Studio IDE process.
+            </summary>
+            <returns>An instance of the currently running Visual Studio IDE process.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetActiveSolution">
+            <summary>
+            Gets the active Visual Studio solution.
+            </summary>
+            <returns>The active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetSolution(EnvDTE.Solution)">
+            <summary>
+            Gets the Visual Studio solution specified if it is not null or
+            returns the active Visual Studio solution.
+            </summary>
+            <param name="solution">A reference to the Visual Studio solution to retrieve.</param>
+            <returns>A Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetActiveConfiguration(EnvDTE.Project)">
+            <summary>
+            Gets the active configuration for the specified Visual Studio project.
+            </summary>
+            <param name="project">The Visual Studio project to get the active configuration for.</param>
+            <returns>The active configuration for the specified Visual Studio project.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetSolutionFolders(EnvDTE.Solution)">
+            <summary>
+            Gets a list of all Visual Studio solution folders in the active
+            Visual Studio solution.
+            </summary>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A list of all Visual Studio solution folders in the active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetSolutionFolders(EnvDTE.Project)">
+            <summary>
+            Gets a list of Visual Studio solution folders contained in the
+            specified solution folder.
+            </summary>
+            <param name="solutionFolder">A solution folder to recurse for additional solution folders.</param>
+            <returns>A list of Visual Studio solution folders contained in the specified solution folder.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.FindSolutionFolder(System.String,EnvDTE.Solution)">
+            <summary>
+            Finds a Visual Studio solution folder using the specified name.
+            </summary>
+            <param name="name">The name of the Visual Studio solution folder.</param>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A Visual Studio solution folder using the specified name.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.ConvertToSolutionFolder(EnvDTE.Project)">
+            <summary>
+            Converts the specified Visual Studio Project folder into a
+            SolutionFolder reference.
+            </summary>
+            <param name="folder">A Visual Studio Project folder reference.</param>
+            <returns>A converted SolutionFolder reference.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetProjects(EnvDTE.Solution)">
+            <summary>
+            Gets a list of all Visual Studio projects in the active Visual
+            Studio solution.
+            </summary>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A list of all Visual Studio projects in the active Visual Studio solution.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetSolutionFolderProjects(EnvDTE.Project)">
+            <summary>
+            Gets a list of Visual Studio projects contained in the specified
+            solution folder.
+            </summary>
+            <param name="solutionFolder">A solution folder to recurse for projects.</param>
+            <returns>A list of Visual Studio projects contained in the specified solution folder.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.FindProject(System.String,EnvDTE.Solution)">
+            <summary>
+            Finds a Visual Studio project using the specified name.
+            </summary>
+            <param name="name">The name of the Visual Studio project.</param>
+            <param name="solution">A reference to the Visual Studio solution.</param>
+            <returns>A Visual Studio project using the specified name.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetClassFilesInProject(EnvDTE.Project)">
+            <summary>
+            Gets a list of class files from the specfied Visual Studio project.
+            </summary>
+            <param name="project">A reference to the Visual Studio project.</param>
+            <returns>A list of class files from the specfied Visual Studio project.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetClassFilesFromProjectItems(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of class files from the specfied list of project items.
+            </summary>
+            <param name="items">A list of project items.</param>
+            <returns>A list of class files from the specfied list of project items.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetNamespacesInClassFiles(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of namespaces from the specified list of class files.
+            </summary>
+            <param name="items">A list of class files.</param>
+            <returns>A list of namespaces from the specified list of class files.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.VsUtils.GetClassesInClassFiles(System.Collections.Generic.List{EnvDTE.ProjectItem})">
+            <summary>
+            Gets a list of code classes from the specified list of class files.
+            </summary>
+            <param name="items">A list of class files.</param>
+            <returns>A list of code classes from the specified list of class files.</returns>
+        </member>
+        <member name="P:OpenLib.Utils.VsUtils.VsInfo">
+            <summary>
+            Gets or sets a reference to the <c>IVsInfo</c> that contains
+            information on the Visual Studio instance.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.WindowsServiceAction">
+            <summary>
+            The <c>WindowsServiceAction</c> type provides an enumeration for
+            Windows service actions.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceAction.Start">
+            <summary>
+            Indicates the Windows service action is to start a service.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceAction.Stop">
+            <summary>
+            Indicates the Windows service action is to stop a service.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.WindowsServiceState">
+            <summary>
+            The <c>WindowsServiceState</c> type provides an enumeration for
+            Windows service states.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceState.NotAvailable">
+            <summary>
+            Indicates the Windows service state is not available.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceState.Running">
+            <summary>
+            Indicates the Windows service state is running.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceState.Stopped">
+            <summary>
+            Indicates the Windows service state is stopped.
+            </summary>
+        </member>
+        <member name="F:OpenLib.Utils.WindowsServiceState.Failed">
+            <summary>
+            Indicates the Windows service state is failed.
+            </summary>
+        </member>
+        <member name="T:OpenLib.Utils.XmlUtils">
+            <summary>
+            The <c>XmlUtils</c> type provides an implementation of the
+            <c>IXmlUtils</c> interface that provides utility methods for common
+            XML operations.
+            </summary>
+        </member>
+        <member name="M:OpenLib.Utils.XmlUtils.#ctor(OpenLib.Utils.IIoUtils)">
+            <summary>
+            Creates a new instance of the <c>XmlUtils</c> class.
+            </summary>
+            <param name="ioUtils">A reference to the <c>IIoUtils</c> for performing I/O operations.</param>
+        </member>
+        <member name="M:OpenLib.Utils.XmlUtils.ValidateDocument(System.String,System.String,System.String)">
+            <summary>
+            Validates if the specified XML document conforms to the specified
+            XSD schema containing the specified namespace.
+            </summary>
+            <param name="xml">The XML document as a string to validate.</param>
+            <param name="xsd">The XSD schema as a string used for validation.</param>
+            <param name="ns">The target namespace.</param>
+            <returns>A value indicating if the validation succeeded.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.XmlUtils.GetElement(System.String,System.String,System.Xml.Linq.XNamespace)">
+            <summary>
+            Gets the value of the specified XML element from the specified XML
+            file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="element">The name of the XML element.</param>
+            <param name="ns">An optional namespace for the XML element.</param>
+            <returns>The value of the specified XML element.</returns>
+        </member>
+        <member name="M:OpenLib.Utils.XmlUtils.UpdateElement(System.String,System.String,System.String,System.Xml.Linq.XNamespace)">
+            <summary>
+            Updates the specified XML element with a value for the specified
+            XML file.
+            </summary>
+            <param name="path">The path to the file.</param>
+            <param name="element">The name of the XML element.</param>
+            <param name="value">The value to update for the XML element.</param>
+            <param name="ns">An optional namespace for the XML element.</param>
+            <returns>A value indicating if the XML element was updated.</returns>
+        </member>
+        <member name="P:OpenLib.Utils.XmlUtils.IoUtils">
+            <summary>
+            Gets or sets a reference to the <c>IIoUtils</c> for performing I/O
+            operations.
+            </summary>
+        </member>
+    </members>
+</doc>

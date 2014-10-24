@@ -1,0 +1,5 @@
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Release\Transcribe Variables.dll
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Release\Transcribe Variables.pdb
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Release\Transcribe Variables.csprojResolveAssemblyReference.cache
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Release\Transcribe Variables.dll
+C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Release\Transcribe Variables.pdb
