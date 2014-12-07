@@ -1,7 +1,0 @@
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Debug\Transcribe Variables.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Debug\Transcribe Variables.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Debug\Transcribe Variables.csprojResolveAssemblyReference.cache
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Debug\Transcribe Variables.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\obj\Debug\Transcribe Variables.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Debug\Transcribe Variables.dll.CodeAnalysisLog.xml
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Transcribe Variables\bin\Debug\Transcribe Variables.dll.lastcodeanalysissucceeded

@@ -1,5 +1,0 @@
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\E-Manual\bin\Release\E-Manual.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\E-Manual\bin\Release\E-Manual.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\E-Manual\obj\Release\E-Manual.csprojResolveAssemblyReference.cache
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\E-Manual\obj\Release\E-Manual.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\E-Manual\obj\Release\E-Manual.pdb

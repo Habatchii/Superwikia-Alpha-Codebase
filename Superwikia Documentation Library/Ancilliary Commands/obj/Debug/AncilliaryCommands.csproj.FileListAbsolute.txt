@@ -1,4 +1,0 @@
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.dll
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.pdb
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Ancilliary Commands\obj\Debug\Ancilliary Commands.dll
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\Ancilliary Commands\obj\Debug\Ancilliary Commands.pdb

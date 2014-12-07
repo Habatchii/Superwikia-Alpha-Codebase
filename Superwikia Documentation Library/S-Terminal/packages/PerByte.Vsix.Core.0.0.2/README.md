@@ -1,1 +1,0 @@
-# PerByte.Vsix.Core #

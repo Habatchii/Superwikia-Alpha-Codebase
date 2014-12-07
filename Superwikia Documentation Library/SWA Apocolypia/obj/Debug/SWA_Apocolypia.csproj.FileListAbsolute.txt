@@ -1,6 +1,0 @@
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\bin\Debug\SWA Apocolypia.dll
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\bin\Debug\SWA Apocolypia.pdb
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\obj\Debug\SWA Apocolypia.dll
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\obj\Debug\SWA Apocolypia.pdb
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\bin\Debug\SWA Apocolypia.dll.CodeAnalysisLog.xml
-C:\Users\Stacy_Staples\Documents\GitHub\Superwikia-Alpha-Codebase\Superwikia-Alpha-Codebase\Superwikia Documentation Library\SWA Apocolypia\bin\Debug\SWA Apocolypia.dll.lastcodeanalysissucceeded

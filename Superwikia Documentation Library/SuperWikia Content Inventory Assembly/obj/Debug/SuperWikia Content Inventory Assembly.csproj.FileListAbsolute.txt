@@ -1,7 +1,0 @@
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\bin\Debug\SuperWikia Content Inventory Assembly.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\bin\Debug\SuperWikia Content Inventory Assembly.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\obj\Debug\SuperWikia Content Inventory Assembly.csprojResolveAssemblyReference.cache
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\obj\Debug\SuperWikia Content Inventory Assembly.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\obj\Debug\SuperWikia Content Inventory Assembly.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\bin\Debug\SuperWikia Content Inventory Assembly.dll.CodeAnalysisLog.xml
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\SuperWikia Content Inventory Assembly\bin\Debug\SuperWikia Content Inventory Assembly.dll.lastcodeanalysissucceeded

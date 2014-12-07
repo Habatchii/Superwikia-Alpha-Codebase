@@ -1,5 +1,0 @@
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Release\Policies (RAIR).dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\bin\Release\Policies (RAIR).pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Release\Policies (RAIR).csprojResolveAssemblyReference.cache
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Release\Policies (RAIR).dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Policies (RAIR)\obj\Release\Policies (RAIR).pdb

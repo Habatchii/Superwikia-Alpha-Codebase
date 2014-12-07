@@ -1,6 +1,0 @@
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\obj\Debug\Ancilliary Commands.dll
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\obj\Debug\Ancilliary Commands.pdb
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.dll.CodeAnalysisLog.xml
-C:\Users\Stacy_Staples\Documents\NClass Generated Projects\Superwikia Documentation Library\Ancilliary Commands\bin\Debug\Ancilliary Commands.dll.lastcodeanalysissucceeded
